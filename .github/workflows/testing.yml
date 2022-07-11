@@ -1,9 +1,14 @@
-name: Python Package using Conda
+name: Spark testing
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      usecase_name: 
+        required: true
+        type: string
 
 jobs:
-  build-linux:
+  use_case_test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
@@ -27,4 +32,4 @@ jobs:
     - name: testing
       run: |
         cd pipeline/Spark/tests
-        python spark_test.py -t product_relative_reach
+        python spark_test.py -t ${{inputs.usecase_name}}
