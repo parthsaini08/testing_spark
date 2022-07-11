@@ -18,6 +18,6 @@ jobs:
       with:
         spark-version: '3.2.1'
         hadoop-version: '3.2'
-    - uses: parthsaini08/testing_spark/.github/workflows/testing_spark.yml@main
+    - uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
       with:
         usecase_name: price_at_an_instant
