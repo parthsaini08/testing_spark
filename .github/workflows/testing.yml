@@ -26,5 +26,5 @@ jobs:
         pip install -r requirements.txt
     - name: testing
       run: |
-        cd tests
+        cd pipeline/Spark/tests
         python spark_test.py -t product_relative_reach
