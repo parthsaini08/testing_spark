@@ -1,0 +1,10 @@
+customers_count
+transactions_count
+price_at_an_instant
+product_relative_reach
+net_wealth
+trending_list_of_products
+trending_list_of_symbols
+age_demographic
+transaction_stats
+high_risk_accounts
