@@ -4,20 +4,8 @@ on: push
 
 jobs:
   testing:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/setup-python@v2
+    - uses: .github/workflows/testing.yml@main
       with:
-        python-version: '3.8'
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '11'
-
-    - uses: vemonet/setup-spark@v1
-      with:
-        spark-version: '3.2.1'
-        hadoop-version: '3.2'
-    - name: Run one script
-      run: echo hello world!
+        usecase_name: price_at_an_instant
+      
       
