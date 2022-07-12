@@ -16,14 +16,11 @@ on:
     paths:
       - 'pipeline/Spark/src/use_cases/spark_price_at_an_instant.py' 
 
-env:
-      reponame: "$GITHUB_REPOSITORY"
 jobs:
   testing:
-    
-    uses: $reponame/.github/workflows/testing.yml@main
+    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
     with:
-      usecase_name: price_at_an_instant
+        usecase_name: price_at_an_instant
         
 
       
