@@ -1,16 +1,16 @@
 name: Spark testing main
 
-on: push 
+on: [push]
 
 jobs:
-  testing_spaai:
-    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
-    with:
-        usecase_name: price_at_an_instant
-  testing_sprr:
-    name: Testing product relative reach
-    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
-    with:
-        usecase_name: product_relative_reach
+  tests:
+    runs-on: ubuntu-latest
+    name: testing spark main
+    steps:
+      - uses: actions/checkout@v3
+      - id: testing price at an instant
+        uses: actions/testing_spark@v1
+        with:
+          usecase_name: 'price_at_an_instant'
       
       
