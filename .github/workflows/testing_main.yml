@@ -20,9 +20,9 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-    - name: Install dependencies
+    - name: owner name
       run: |
-        echo ${{github.repository.owner}}
+        echo "${{github.repository.owner}}"
         
 
       
