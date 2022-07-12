@@ -2,7 +2,7 @@ name: 'Hello World'
 description: 'Greet someone'
 inputs:
   usecase_name:  
-    description: 'Name of the usecase you want to test
+    description: 'Name of the usecase you want to test'
     required: true
 runs:
     using: "composite"
