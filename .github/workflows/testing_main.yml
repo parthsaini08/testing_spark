@@ -1,11 +1,28 @@
 name: Spark testing main
 
-on: push 
+on: 
+  push:
+    paths:
+      pipeline/Spark/src/use_cases/spark_price_at_an_instant.py 
 
 jobs:
-  testing:
-    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
-    with:
-        usecase_name: price_at_an_instant
-      
+  build:
+    runs-on: ubuntu-latest  # windows-latest | macos-latest
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v23.1
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+    
       
