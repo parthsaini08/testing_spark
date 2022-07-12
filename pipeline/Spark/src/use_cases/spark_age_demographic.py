@@ -4,7 +4,6 @@ from pyspark.sql.types import DateType, IntegerType, LongType, TimestampType
 
 # Class that returns customers divided into age_groups
 
-
 class AgeDemographic:
     def __init__() -> None:
         pass
