@@ -1,31 +1,15 @@
-name: Test
+name: Spark testing main
 
-on: 
-  push:
-    paths:
-    - 'pipeline/Spark/src/use_cases/**'
+on: push 
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2.1.0
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Printing
-        run: |
-          echo "All:"
-          echo "${{ steps.abc.outputs.all }}"
-          echo "Added:"
-          echo "${{ steps.abc.outputs.added }}"
-          echo "Removed:"
-          echo "${{ steps.abc.outputs.removed }}"
-          echo "Renamed:"
-          echo "${{ steps.abc.outputs.renamed }}"
-          echo "Modified:"
-          echo "${{ steps.abc.outputs.modified }}"
-          echo "Added+Modified:"
-          echo "${{ steps.abc.outputs.added_modified }}"
+  testing:
+    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
+    with:
+        usecase_name: price_at_an_instant
+    name: Testing product relative reach
+    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
+    with:
+        usecase_name: product_relative_reach
+      
+      
