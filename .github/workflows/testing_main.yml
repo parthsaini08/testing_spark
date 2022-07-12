@@ -1,6 +1,21 @@
 name: Spark testing main
 
-on: push 
+on:
+  push:
+    branches:
+      - 'main'
+      - 'dev'
+    paths:
+      - 'pipeline/Spark/src/use_cases/spark_price_at_an_instant.py'
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - 'main'
+      - 'dev'
+    paths:
+      - 'pipeline/Spark/src/use_cases/spark_price_at_an_instant.py' 
 
 jobs:
   testing:
