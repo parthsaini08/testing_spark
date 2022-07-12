@@ -3,7 +3,7 @@ name: Test
 on: 
   push:
     paths:
-    - 'pipeline/Spark/src/use_cases/'
+    - 'pipeline/Spark/src/use_cases/**'
 
 jobs:
   test:
