@@ -8,7 +8,7 @@ jobs:
     name: testing spark main
     steps:
       - uses: actions/checkout@v3
-      - id: testing price at an instant
+      - id: foo
         uses: actions/testing_spark@v1
         with:
           usecase_name: 'price_at_an_instant'
