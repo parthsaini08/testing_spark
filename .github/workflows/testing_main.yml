@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: actions/testing_spark@v1
+        uses: actions/usecasetest@v1
         with:
           usecase_name: 'price_at_an_instant'
       
