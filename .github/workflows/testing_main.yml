@@ -18,11 +18,9 @@ on:
 
 jobs:
   testing:
-    runs-on: ubuntu-latest
-    steps:
-    - name: owner name
-      run: |
-        echo " name of repo is - $GITHUB_REPOSITORY"
+    uses: $GITHUB_REPOSITORY/.github/workflows/testing.yml@main
+    with:
+      usecase_name: price_at_an_instant
         
 
       
