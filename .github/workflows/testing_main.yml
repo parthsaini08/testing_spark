@@ -11,7 +11,7 @@ jobs:
        uses: tj-actions/changed-files@v23.1
        with: 
          files: |
-          spark_price_at_an_instant.py
+          pipeline/Spark/src/use_cases/spark_price_at_an_instant.py
      - name: price changed
        if: steps.changed-files-specific.outputs.any_changed == 'true'
        uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
