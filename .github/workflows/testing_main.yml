@@ -1,6 +1,9 @@
 name: Test
 
-on: push
+on: 
+  push:
+    paths:
+    - 'pipeline/Spark/src/use_cases/'
 
 jobs:
   test:
