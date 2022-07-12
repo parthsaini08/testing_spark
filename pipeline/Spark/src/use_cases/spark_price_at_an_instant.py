@@ -3,7 +3,6 @@ from pyspark.sql.functions import col, from_json
 
 # Class that gives the price at an instant
 
-
 class PriceAtAnInstant:
     def __init__() -> None:
         pass
