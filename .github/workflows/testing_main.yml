@@ -5,21 +5,20 @@ on: push
 
 jobs:
   testing:
-    - name: Get changed files using defaults
-      id: changed-files
-      uses: tj-actions/changed-files@v23.1
 
-    - name: Running test for price at an instant
-      if: contains(steps.changed-files.outputs.modified_files, 'spark_price_at_an_instant.py')
-      uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
-      with:
-        usecase_name: price_at_an_instant
-        
-    - name: Running test for product relative reach
-      if: contains(steps.changed-files.outputs.modified_files, 'spark_product_relative_reach.py')
-      uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
-      with:
-        usecase_name: product_relative_reach
+     - name: Get specific changed files
+       id: changed-files-specific
+       uses: tj-actions/changed-files@v23.1
+       with: 
+         files: |
+          spark_price_at_an_instant.py
+     - name: price changed
+       if: steps.changed-files-specific.outputs.any_changed == 'true'
+       uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
+       with:
+          usecase_name: price_at_an_instant
+          
+            
         
       
         
