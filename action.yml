@@ -4,7 +4,9 @@ inputs:
   usecase_name:  
     description: 'Name of the usecase you want to test
     required: true
-runs:
-  using: "composite"
-  steps:
-    - run: python spark_test.py -t ${{ inputs.usecase_name }}
+  runs:
+    using: "composite"
+    steps:
+      - run: python spark_test.py -t ${{ inputs.usecase_name }}
+      - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+        shell: bash     
