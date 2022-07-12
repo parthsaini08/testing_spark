@@ -2,7 +2,7 @@ import spark_consumer as sp_con
 from pyspark.sql.functions import col, from_json
 
 # Class that gives the price at an instant
-#testing it
+#testing
 class PriceAtAnInstant:
     def __init__() -> None:
         pass
