@@ -18,7 +18,7 @@ on:
 
 jobs:
   testing:
-    uses: ${{ github.repository	}}/.github/workflows/testing.yml@main
+    uses: ./.github/workflows/testing.yml
     with:
         usecase_name: price_at_an_instant
         
