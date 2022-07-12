@@ -1,28 +1,11 @@
 name: Spark testing main
 
-on: [push]
+on: push 
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    name: testing spark main
-    steps:
-    - uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '11'
-
-    - uses: vemonet/setup-spark@v1
-      with:
-        spark-version: '3.2.1'
-        hadoop-version: '3.2'
-        
-    - uses: actions/checkout@v3
-    - id: foo
-      uses: actions/usecasetest@v1
-      with:
-        usecase_name: 'price_at_an_instant'
+  testing:
+    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
+    with:
+        usecase_name: price_at_an_instant
       
       
