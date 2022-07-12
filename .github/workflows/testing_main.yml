@@ -1,25 +1,11 @@
 name: Spark testing main
 
-on: push
-
+on: push 
 
 jobs:
   testing:
-
-     - name: Get specific changed files
-       id: changed-files-specific
-       uses: tj-actions/changed-files@v23.1
-       with: 
-         files: |
-          pipeline/Spark/src/use_cases/spark_price_at_an_instant.py
-     - name: price changed
-       if: steps.changed-files-specific.outputs.any_changed == 'true'
-       run: |
-          echo "One or more files listed above has changed."
-          
-            
-        
+    uses: parthsaini08/testing_spark/.github/workflows/testing.yml@main
+    with:
+        usecase_name: price_at_an_instant
       
-        
-
       
